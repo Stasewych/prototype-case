@@ -29,7 +29,7 @@
             color: #050505;
             -webkit-font-smoothing: antialiased;
         }
-        /* Custom Scrollbar to match Norml minimal style */
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 4px;
         }
@@ -55,7 +55,7 @@
 </head>
 <body class="antialiased selection:bg-black selection:text-white">
 
-    <!-- STICKY SIDEBAR (Norml Style: Bordered, Monospace, Clean) -->
+    <!-- STICKY SIDEBAR -->
     <div class="hidden lg:flex fixed left-0 top-0 h-screen w-80 flex-col justify-between border-r border-norml-border bg-white z-40 px-8 py-8">
         
         <!-- Top: Logo -->
@@ -107,7 +107,7 @@
         <!-- 1. HERO SECTION -->
         <section class="min-h-screen flex flex-col justify-between border-b border-norml-border">
             
-            <!-- Top Nav (Mobile/Tablet) & Desktop Spacer -->
+            <!-- Top Nav -->
             <div class="flex justify-end p-8">
                 <a href="#" class="bg-black text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-gray-800 transition">
                     Book a call
@@ -122,7 +122,7 @@
                     <span class="text-gray-300">Engine.</span>
                 </h1>
 
-                <!-- Hero Visual (Monochrome) -->
+                <!-- Hero Visual -->
                 <div class="w-full aspect-[16/9] bg-norml-gray rounded-sm overflow-hidden relative group border border-norml-border fade-up" style="animation-delay: 0.3s;">
                     <div class="absolute inset-0 flex items-center justify-center">
                          <span class="font-mono text-xs text-gray-400 uppercase tracking-widest">[ Visual: Cinematic Mobile Mockup ]</span>
@@ -132,25 +132,48 @@
             </div>
         </section>
 
-        <!-- 2. AMBITION (Business Goal) -->
+        <!-- 2. THE CLIENT (NEW SECTION) -->
         <section class="px-6 md:px-12 lg:px-20 py-32 border-b border-norml-border">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                <div class="lg:col-span-4">
+                    <span class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-4 block">The Client</span>
+                    <h2 class="text-3xl font-medium">Metroplex Homebuyers</h2>
+                </div>
+                <div class="lg:col-span-8">
+                    <p class="text-xl md:text-2xl font-light leading-relaxed text-gray-900 mb-8">
+                        Metroplex is a premier real estate investment firm in the Dallas–Fort Worth area, specializing in direct property acquisitions. They operate in a high-velocity market where speed is the only currency that matters.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-base text-gray-600 leading-relaxed">
+                        <p>
+                            As market competition intensified, their existing digital infrastructure began to crumble under the weight of its own success. Inquiries from Google Ads, SEO traffic, and referrals were landing in disjointed systems.
+                        </p>
+                        <p>
+                            They needed more than just a website redesign; they needed a scalable digital ecosystem capable of automating lead capture, routing, and nurturing without adding headcount to their operations team.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. THE AMBITION (Business Goal) -->
+        <section class="px-6 md:px-12 lg:px-20 py-32 border-b border-norml-border bg-norml-gray/20">
             <div class="max-w-4xl">
                 <span class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-8 block">The Ambition</span>
-                <h2 class="text-3xl md:text-4xl font-medium leading-tight mb-8">
-                    Metroplex isn't just buying houses; they are buying data velocity.
+                <h2 class="text-3xl md:text-4xl font-medium leading-tight mb-12">
+                    "We don't just need a website. We need a machine that works while we sleep."
                 </h2>
-                <div class="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-3xl">
-                    <p class="mb-6">
-                        The client came to us with a high-volume traffic funnel that was effectively breaking its own infrastructure. Their reliance on "no-code" builders like Elementor created a ceiling: ad conversions were throttled by load times.
+                <div class="space-y-8 text-lg text-gray-600 font-light leading-relaxed border-l border-black pl-8 md:pl-12">
+                    <p>
+                        The client’s legacy setup—built on Elementor and standard Formstack plugins—had hit a hard ceiling. The visual builder code was bloated, causing page load times to lag and directly impacting ad quality scores. More critically, data was siloed: leads captured on the site had to be manually transferred to the CRM, creating a dangerous gap where opportunities could slip through.
                     </p>
                     <p>
-                        Our goal was absolute: build a system that processes complex real estate data with <span class="text-black font-medium">zero friction</span> and <span class="text-black font-medium">zero loss</span>.
+                        Our mandate was absolute: architect a custom solution that prioritizes <span class="text-black font-medium">data velocity</span> above all else. We needed to build a system where a lead entered at 2:00 AM is profiled, routed, and synced to the CRM by 2:01 AM, with zero friction and zero data loss.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- 3. OUTCOME (Dark Mode Section - Coxit Logic) -->
+        <!-- 4. OUTCOME (Dark Mode Section) -->
         <section class="bg-[#050505] text-white py-32 px-6 md:px-12 lg:px-20">
             <div class="max-w-screen-xl">
                 
@@ -161,23 +184,27 @@
                             Reliability as a<br>Service.
                         </h2>
                         <p class="text-xl text-gray-400 font-light leading-relaxed">
-                            The true measure of this project’s success isn't the design—it’s the silence. The system now runs autonomously, handling complex conditional logic and heavy data synchronization without manual intervention.
+                            The true measure of this project’s success isn't the visual design—it’s the operational silence. The system now runs autonomously, handling complex conditional logic, multi-step profiling, and heavy media synchronization without manual intervention.
                         </p>
                     </div>
 
-                    <!-- Client Testimonial (Replaces Metrics) -->
-                    <div class="flex flex-col justify-between h-full">
-                        <blockquote class="text-3xl font-light leading-normal mb-12">
-                            "Norml Studio gave us the technical freedom to focus entirely on marketing. We invent the strategy, and they ensure the logic just works—predictably and flawlessly."
-                        </blockquote>
-                        <div class="flex items-center gap-4">
-                            <div class="w-16 h-16 bg-white/10 rounded-full overflow-hidden">
-                                <!-- Placeholder for Client Photo -->
+                    <!-- Client Testimonial -->
+                    <div class="flex flex-col justify-between h-full py-4 lg:pl-16 border-l border-white/10">
+                        <div class="relative">
+                            <svg class="w-10 h-10 text-white/30 mb-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.896 14.321 15.293 14.922 13.191C15.522 11.09 16.654 9.229 18.319 7.609L18.319 4.817C15.373 6.594 13.264 9.091 11.992 12.309C11.61 13.259 11.321 14.262 11.125 15.319H14.017V21ZM5 21L5 18C5 16.896 5.304 15.293 5.905 13.191C6.505 11.09 7.637 9.229 9.302 7.609L9.302 4.817C6.356 6.594 4.247 9.091 2.975 12.309C2.593 13.259 2.304 14.262 2.108 15.319H5V21Z"/></svg>
+                            
+                            <blockquote class="text-2xl md:text-3xl font-light leading-snug mb-10 text-gray-200">
+                                "Norml Studio gave us the technical freedom to focus entirely on marketing. They ensure the logic just works—predictably and flawlessly."
+                            </blockquote>
+                        </div>
+                        
+                        <div class="flex items-center gap-5">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
                                 <div class="w-full h-full bg-gray-800"></div>
                             </div>
                             <div>
-                                <cite class="font-medium not-italic block text-lg">Client Name</cite>
-                                <span class="font-mono text-xs text-gray-500 uppercase">CEO, Metroplex Homebuyers</span>
+                                <cite class="not-italic font-medium text-lg block text-white">Client Name</cite>
+                                <span class="font-mono text-xs text-gray-500 uppercase tracking-widest">CEO, Metroplex</span>
                             </div>
                         </div>
                     </div>
@@ -187,7 +214,7 @@
                 <div class="w-full aspect-[21/9] bg-[#111] border border-white/10 rounded-sm flex items-center justify-center relative overflow-hidden group">
                     <div class="text-center z-10">
                         <p class="font-mono text-xs text-gray-500 uppercase mb-2">[ Visual: High-Fidelity CRM Dashboard ]</p>
-                        <p class="text-gray-600 text-sm">Showing Real-time Data Flow</p>
+                        <p class="text-gray-600 text-sm">Showing Real-time Data Flow & 100% Uptime</p>
                     </div>
                     <div class="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition duration-700"></div>
                 </div>
@@ -195,66 +222,80 @@
             </div>
         </section>
 
-        <!-- 4. THE STORY (Grid Layout with Chapters) -->
+        <!-- 5. THE STORY (Detailed Chapters) -->
         <div class="border-b border-norml-border">
             
-            <!-- CHAPTER 01 -->
+            <!-- CHAPTER 01: Architecture -->
             <section class="grid grid-cols-1 lg:grid-cols-2 border-b border-norml-border">
                 <div class="p-12 lg:p-20 border-r border-norml-border flex flex-col justify-center">
                     <span class="font-mono text-xs text-gray-400 uppercase mb-6 block">01 — Architecture</span>
-                    <h3 class="text-3xl font-medium mb-6">The Cost of Convenience</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                        In the early stages, tools like Elementor allowed for rapid growth. But as traffic scaled, these conveniences became bottlenecks. We made the strategic decision to strip away the heavy visual builders. 
-                    </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        By re-engineering the core infrastructure on a custom WordPress theme using Vanilla JavaScript, we regained complete control over the DOM.
-                    </p>
+                    <h3 class="text-3xl font-medium mb-8">The Cost of Convenience</h3>
+                    
+                    <div class="text-lg text-gray-600 leading-relaxed space-y-6">
+                        <p>
+                            In the early growth stages, tools like Elementor and standard plugins allowed for rapid iteration. But as traffic scaled, these "no-code" conveniences became crippling bottlenecks. Every extra plugin added milliseconds to the load time, directly affecting the cost-per-lead in paid campaigns.
+                        </p>
+                        <p>
+                            We made the strategic decision to strip away the heavy visual builders. By re-engineering the core infrastructure on a custom WordPress theme using <strong>Vanilla JavaScript</strong> and optimized PHP templates, we regained complete control over the DOM. 
+                        </p>
+                        <p>
+                            This wasn't just a code cleanup; it was a foundational shift to ensure the platform could handle thousands of concurrent visitors without degradation.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-[#111] min-h-[500px] flex items-center justify-center relative p-12">
-                     <!-- Visual -->
+                <div class="bg-[#111] min-h-[600px] flex items-center justify-center relative p-12">
                      <div class="w-full max-w-md aspect-[4/3] border border-white/10 rounded flex items-center justify-center">
                         <span class="font-mono text-xs text-gray-500">[ Visual: Clean Code (Dark) ]</span>
                      </div>
                 </div>
             </section>
 
-            <!-- CHAPTER 02 -->
+            <!-- CHAPTER 02: UX Engineering -->
             <section class="grid grid-cols-1 lg:grid-cols-2 border-b border-norml-border">
-                 <!-- Visual First on Desktop -->
-                 <div class="bg-norml-gray min-h-[500px] flex items-center justify-center relative p-12 order-2 lg:order-1 border-r border-norml-border">
-                     <!-- Visual -->
+                 <div class="bg-norml-gray min-h-[600px] flex items-center justify-center relative p-12 order-2 lg:order-1 border-r border-norml-border">
                      <div class="grid grid-cols-2 gap-4 w-full max-w-md">
-                        <div class="aspect-[9/16] bg-white shadow-xl border border-gray-200 rounded"></div>
-                        <div class="aspect-[9/16] bg-white shadow-xl border border-gray-200 rounded mt-8"></div>
+                        <div class="aspect-[9/16] bg-white shadow-xl border border-gray-200 rounded transform translate-y-8"></div>
+                        <div class="aspect-[9/16] bg-white shadow-xl border border-gray-200 rounded transform -translate-y-8"></div>
                      </div>
                      <span class="absolute bottom-8 left-8 font-mono text-xs text-gray-400">[ Visual: Mobile Flow ]</span>
                 </div>
                 <div class="p-12 lg:p-20 flex flex-col justify-center order-1 lg:order-2">
                     <span class="font-mono text-xs text-gray-400 uppercase mb-6 block">02 — UX Engineering</span>
-                    <h3 class="text-3xl font-medium mb-6">The High-Friction Paradox</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                        Distress sales require detailed information—often up to thirty distinct data points. Conventional wisdom suggests short forms. We couldn't shorten the form, so we reduced the cognitive load.
-                    </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                         By integrating public property APIs, the system auto-profiles the house as soon as the address is typed.
-                    </p>
+                    <h3 class="text-3xl font-medium mb-8">The High-Friction Paradox</h3>
+                    
+                    <div class="text-lg text-gray-600 leading-relaxed space-y-6">
+                        <p>
+                            Distress sales require detailed information—often up to thirty distinct data points regarding property condition, financials, and ownership. Conventional CRO wisdom suggests short forms. However, we couldn't shorten the form without sacrificing the quality of the lead.
+                        </p>
+                        <p>
+                            Instead of reducing questions, we reduced the <strong>cognitive load</strong>. We engineered a smart, multi-step profiling system. By integrating public property APIs, the system pre-fills house data (square footage, year built) as soon as the address is typed.
+                        </p>
+                        <p>
+                            We turned a tedious interrogation into a seamless verification process. This "Identity Resolution" approach allows us to track return users across sessions, ensuring we capture the full narrative of the lead without overwhelming them.
+                        </p>
+                    </div>
                 </div>
             </section>
 
-            <!-- CHAPTER 03 -->
+            <!-- CHAPTER 03: Integration -->
             <section class="grid grid-cols-1 lg:grid-cols-2">
                 <div class="p-12 lg:p-20 border-r border-norml-border flex flex-col justify-center">
                     <span class="font-mono text-xs text-gray-400 uppercase mb-6 block">03 — Integration</span>
-                    <h3 class="text-3xl font-medium mb-6">Breaking Storage Limits</h3>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                        Users needed to upload dozens of high-resolution photos, a task that routinely crashed standard servers. Rather than upgrading to expensive enterprise storage, we engineered a custom tunnel directly to the Google Drive API.
-                    </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        Images are now uploaded straight to a structured drive folder, instantly generating public links that sync to the CRM.
-                    </p>
+                    <h3 class="text-3xl font-medium mb-8">Breaking Storage Limits</h3>
+                    
+                    <div class="text-lg text-gray-600 leading-relaxed space-y-6">
+                        <p>
+                            One of the unique challenges was media handling. Users needed to upload dozens of high-resolution photos of their properties directly from their phones. This volume of data routinely crashed standard server configurations and filled up hosting limits.
+                        </p>
+                        <p>
+                            Rather than upgrading to expensive enterprise storage, we engineered a custom tunnel directly to the <strong>Google Drive API</strong>. 
+                        </p>
+                        <p>
+                            When a user uploads a photo, it never touches the WordPress media library. Instead, it flows straight to a structured Drive folder, instantly generating public links that are synced to the client's Zoho CRM. This solution completely bypassed server load issues while providing the client with an unlimited, organized asset library.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-white min-h-[500px] flex items-center justify-center relative p-12">
-                     <!-- Visual -->
+                <div class="bg-white min-h-[600px] flex items-center justify-center relative p-12">
                      <div class="w-full aspect-video bg-norml-gray border border-norml-border flex items-center justify-center">
                         <span class="font-mono text-xs text-gray-400">[ Visual: API Architecture Diagram ]</span>
                      </div>
@@ -262,49 +303,49 @@
             </section>
         </div>
 
-        <!-- 5. HOW IT WORKS (Grid Features) -->
+        <!-- 6. SYSTEM MECHANICS -->
         <section class="py-32 px-6 md:px-12 lg:px-20 bg-norml-gray/30 border-b border-norml-border">
             <div class="max-w-screen-xl mx-auto">
                 <h2 class="text-3xl font-medium mb-16 text-center">System Mechanics</h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-norml-border border border-norml-border">
                     <!-- Card 1 -->
-                    <div class="bg-white p-8 h-64 flex flex-col justify-between">
-                        <div class="w-8 h-8 bg-norml-gray rounded-sm mb-4"></div>
+                    <div class="bg-white p-10 h-80 flex flex-col justify-between hover:bg-gray-50 transition">
+                        <div class="w-10 h-10 bg-norml-gray rounded-sm mb-4"></div>
                         <div>
-                            <h4 class="font-medium mb-2">Smart Capture</h4>
-                            <p class="text-sm text-gray-500">Address auto-complete via API reduces user effort.</p>
+                            <h4 class="font-medium mb-3 text-lg">Smart Capture</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Address auto-complete via public APIs reduces user effort by 70%, increasing completion rates.</p>
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="bg-white p-8 h-64 flex flex-col justify-between">
-                        <div class="w-8 h-8 bg-norml-gray rounded-sm mb-4"></div>
+                    <div class="bg-white p-10 h-80 flex flex-col justify-between hover:bg-gray-50 transition">
+                        <div class="w-10 h-10 bg-norml-gray rounded-sm mb-4"></div>
                         <div>
-                            <h4 class="font-medium mb-2">ID Resolution</h4>
-                            <p class="text-sm text-gray-500">Tracking return users across sessions seamlessly.</p>
+                            <h4 class="font-medium mb-3 text-lg">ID Resolution</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Advanced tracking recognizes return users across sessions to prevent duplicate leads and merge data.</p>
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="bg-white p-8 h-64 flex flex-col justify-between">
-                        <div class="w-8 h-8 bg-norml-gray rounded-sm mb-4"></div>
+                    <div class="bg-white p-10 h-80 flex flex-col justify-between hover:bg-gray-50 transition">
+                        <div class="w-10 h-10 bg-norml-gray rounded-sm mb-4"></div>
                         <div>
-                            <h4 class="font-medium mb-2">Asset Routing</h4>
-                            <p class="text-sm text-gray-500">Zero server bloat via Drive API integration.</p>
+                            <h4 class="font-medium mb-3 text-lg">Asset Routing</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Zero server bloat via Drive API integration. Media flows directly to cloud storage.</p>
                         </div>
                     </div>
                     <!-- Card 4 -->
-                    <div class="bg-white p-8 h-64 flex flex-col justify-between">
-                        <div class="w-8 h-8 bg-norml-gray rounded-sm mb-4"></div>
+                    <div class="bg-white p-10 h-80 flex flex-col justify-between hover:bg-gray-50 transition">
+                        <div class="w-10 h-10 bg-norml-gray rounded-sm mb-4"></div>
                         <div>
-                            <h4 class="font-medium mb-2">Instant Sync</h4>
-                            <p class="text-sm text-gray-500">Real-time webhooks for sales team alerts.</p>
+                            <h4 class="font-medium mb-3 text-lg">Instant Sync</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">Zapier webhooks trigger instant alerts for the sales team, enabling < 5 min response time.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 6. FOOTER (More Work) -->
+        <!-- 7. FOOTER (More Work) -->
         <section class="py-32 px-6 md:px-12 lg:px-20">
              <div class="flex justify-between items-end mb-16 border-b border-norml-border pb-8">
                 <h2 class="text-3xl font-medium">More Work</h2>
