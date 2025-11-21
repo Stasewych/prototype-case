@@ -12,8 +12,9 @@
                 extend: {
                     colors: {
                         'norml-black': '#050505',
-                        'norml-gray': '#F5F5F5',
+                        'norml-gray': '#F2F2F2',
                         'norml-border': '#E5E5E5',
+                        'norml-dark-border': '#333333',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -50,6 +51,17 @@
         }
         @keyframes fadeUp {
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Diagram Animations */
+        .flow-line {
+            background: repeating-linear-gradient(90deg, #000, #000 4px, transparent 4px, transparent 8px);
+            background-size: 200% 100%;
+            animation: flowMove 2s linear infinite;
+        }
+        @keyframes flowMove {
+            0% { background-position: 100% 0; }
+            100% { background-position: 0 0; }
         }
     </style>
 </head>
@@ -213,7 +225,7 @@
         </section>
 
         <!-- 4. OUTCOME (Dark Mode Section) -->
-        <section class="bg-[#050505] text-white py-48 px-6 md:px-12 lg:px-20">
+        <section class="bg-[#050505] text-white py-48 px-6 md:px-12 lg:px-20 border-b border-norml-border">
             <div class="max-w-screen-xl mx-auto">
                 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-32 mb-40 items-start">
@@ -287,27 +299,29 @@
                         </p>
                     </div>
                 </div>
-                <div class="bg-[#111] min-h-[1000px] flex items-center justify-center relative p-12">
+                
+                <!-- FIXED VISUAL: Replaced Dark BG with Light Gray + Border to separate from previous Outcome section -->
+                <div class="bg-white min-h-[1000px] flex items-center justify-center relative p-12">
                      <!-- Visual: Code -->
-                     <div class="w-full max-w-xl aspect-[4/5] border border-white/10 rounded flex flex-col bg-[#0A0A0A] p-10 shadow-2xl hover:scale-[1.02] transition duration-700">
+                     <div class="w-full max-w-xl aspect-[4/5] border border-norml-border rounded flex flex-col bg-norml-gray p-10 shadow-xl hover:scale-[1.02] transition duration-700">
                         <div class="flex gap-3 mb-8">
-                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-gray-400"></div>
                         </div>
-                        <div class="space-y-4 font-mono text-sm text-gray-500">
-                            <div class="w-3/4 h-3 bg-white/10 rounded"></div>
-                            <div class="w-1/2 h-3 bg-white/10 rounded"></div>
-                            <div class="w-full h-3 bg-white/10 rounded"></div>
-                            <div class="w-2/3 h-3 bg-white/10 rounded"></div>
+                        <div class="space-y-4 font-mono text-sm text-gray-400">
+                            <div class="w-3/4 h-3 bg-white rounded"></div>
+                            <div class="w-1/2 h-3 bg-white rounded"></div>
+                            <div class="w-full h-3 bg-white rounded"></div>
+                            <div class="w-2/3 h-3 bg-white rounded"></div>
                             <br>
-                            <div class="w-5/6 h-3 bg-white/20 rounded"></div>
-                            <div class="w-1/2 h-3 bg-white/20 rounded"></div>
+                            <div class="w-5/6 h-3 bg-white rounded"></div>
+                            <div class="w-1/2 h-3 bg-white rounded"></div>
                             <br>
-                            <div class="w-full h-3 bg-white/10 rounded"></div>
-                            <div class="w-3/4 h-3 bg-white/10 rounded"></div>
+                            <div class="w-full h-3 bg-white rounded"></div>
+                            <div class="w-3/4 h-3 bg-white rounded"></div>
                         </div>
-                        <span class="mt-auto font-mono text-xs text-gray-600 text-center block">[ Visual: Clean Code Snippet / Backend Logic ]</span>
+                        <span class="mt-auto font-mono text-xs text-gray-500 text-center block">[ Visual: Clean Code Snippet / Backend Logic ]</span>
                      </div>
                 </div>
             </section>
@@ -368,17 +382,31 @@
                     </div>
                 </div>
                 <div class="bg-white min-h-[1000px] flex items-center justify-center relative p-12">
-                     <div class="w-full aspect-square max-w-2xl bg-norml-gray border border-norml-border flex items-center justify-center rounded-full hover:border-black transition duration-700">
-                        <div class="text-center">
-                            <span class="font-mono text-xs text-gray-400 block mb-8">[ Visual: Circular API Data Flow Diagram ]</span>
-                            <div class="flex gap-8 justify-center opacity-50">
-                                <div class="w-24 h-24 border border-black rounded-full flex items-center justify-center text-xl">WP</div>
-                                <span class="self-center text-2xl">→</span>
-                                <div class="w-24 h-24 border border-black rounded-full flex items-center justify-center text-xl">API</div>
-                                <span class="self-center text-2xl">→</span>
-                                <div class="w-24 h-24 border border-black rounded-full flex items-center justify-center text-xl">CRM</div>
+                     <!-- CSS-DRAWN DIAGRAM -->
+                     <div class="w-full aspect-square max-w-2xl bg-norml-gray border border-norml-border flex items-center justify-center rounded-full hover:border-black transition duration-700 relative overflow-hidden">
+                        
+                        <!-- Moving Data Lines -->
+                        <div class="absolute top-1/2 left-0 w-full h-px bg-gray-300 transform -translate-y-1/2"></div>
+                        <div class="absolute top-1/2 left-0 w-full h-px flow-line transform -translate-y-1/2"></div>
+
+                        <div class="flex justify-between w-3/4 z-10 relative">
+                            <!-- Node 1 -->
+                            <div class="flex flex-col items-center gap-4">
+                                <div class="w-24 h-24 bg-white border border-black rounded-full flex items-center justify-center text-xl font-medium shadow-lg">Form</div>
+                                <span class="font-mono text-xs text-gray-500">INPUT</span>
+                            </div>
+                            <!-- Node 2 -->
+                            <div class="flex flex-col items-center gap-4">
+                                <div class="w-24 h-24 bg-black text-white border border-black rounded-full flex items-center justify-center text-xl font-medium shadow-lg">Drive</div>
+                                <span class="font-mono text-xs text-gray-500">STORAGE</span>
+                            </div>
+                            <!-- Node 3 -->
+                            <div class="flex flex-col items-center gap-4">
+                                <div class="w-24 h-24 bg-white border border-black rounded-full flex items-center justify-center text-xl font-medium shadow-lg">CRM</div>
+                                <span class="font-mono text-xs text-gray-500">SYNC</span>
                             </div>
                         </div>
+                        
                      </div>
                 </div>
             </section>
@@ -409,42 +437,53 @@
             </section>
         </div>
 
-        <!-- 6. SYSTEM MECHANICS (Deep Grid) -->
-        <section class="py-48 px-6 md:px-12 lg:px-20 bg-norml-gray/30 border-b border-norml-border">
+        <!-- 6. SYSTEM MECHANICS (Premium Grid) -->
+        <section class="py-48 px-6 md:px-12 lg:px-20 bg-white border-b border-norml-border">
             <div class="max-w-screen-xl mx-auto">
-                <h2 class="text-4xl font-medium mb-24 text-center">System Mechanics</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-norml-border border border-norml-border">
+                <div class="flex flex-col lg:flex-row justify-between items-end mb-32">
+                    <h2 class="text-5xl md:text-6xl font-medium leading-tight max-w-3xl">
+                        The Invisible Engine to<br>
+                        <span class="text-gray-400">The Invisible Lead Engine.</span>
+                    </h2>
+                    <span class="font-mono text-xs text-gray-400 uppercase tracking-widest mb-2 block">System Mechanics</span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-l border-norml-border">
                     <!-- Card 1 -->
-                    <div class="bg-white p-16 h-[30rem] flex flex-col justify-between hover:bg-gray-50 transition duration-300 group">
-                        <div class="w-16 h-16 bg-norml-gray rounded-sm mb-8 group-hover:bg-black transition duration-300"></div>
+                    <div class="bg-white p-12 h-[32rem] flex flex-col justify-between hover:bg-[#FAFAFA] transition duration-500 group border-r border-b border-norml-border relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-norml-gray rounded-bl-full -mr-12 -mt-12 transition-all duration-500 group-hover:bg-black"></div>
+                        <div class="font-mono text-3xl text-gray-200 mb-8 group-hover:text-black transition duration-500">{1}</div>
                         <div>
-                            <h4 class="font-medium mb-6 text-2xl">Smart Capture</h4>
-                            <p class="text-base text-gray-500 leading-relaxed">Address auto-complete via public APIs reduces user effort by 70%, increasing completion rates significantly.</p>
+                            <h4 class="font-medium mb-6 text-2xl tracking-tight">Smart Capture</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed font-mono">Address auto-complete via public APIs reduces user effort by 70%, increasing completion rates significantly.</p>
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="bg-white p-16 h-[30rem] flex flex-col justify-between hover:bg-gray-50 transition duration-300 group">
-                        <div class="w-16 h-16 bg-norml-gray rounded-sm mb-8 group-hover:bg-black transition duration-300"></div>
+                    <div class="bg-white p-12 h-[32rem] flex flex-col justify-between hover:bg-[#FAFAFA] transition duration-500 group border-r border-b border-norml-border relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-norml-gray rounded-bl-full -mr-12 -mt-12 transition-all duration-500 group-hover:bg-black"></div>
+                        <div class="font-mono text-3xl text-gray-200 mb-8 group-hover:text-black transition duration-500">{2}</div>
                         <div>
-                            <h4 class="font-medium mb-6 text-2xl">ID Resolution</h4>
-                            <p class="text-base text-gray-500 leading-relaxed">Advanced tracking recognizes return users across sessions to prevent duplicate leads and merge data.</p>
+                            <h4 class="font-medium mb-6 text-2xl tracking-tight">ID Resolution</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed font-mono">Advanced tracking recognizes return users across sessions to prevent duplicate leads and merge data.</p>
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="bg-white p-16 h-[30rem] flex flex-col justify-between hover:bg-gray-50 transition duration-300 group">
-                        <div class="w-16 h-16 bg-norml-gray rounded-sm mb-8 group-hover:bg-black transition duration-300"></div>
+                    <div class="bg-white p-12 h-[32rem] flex flex-col justify-between hover:bg-[#FAFAFA] transition duration-500 group border-r border-b border-norml-border relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-norml-gray rounded-bl-full -mr-12 -mt-12 transition-all duration-500 group-hover:bg-black"></div>
+                        <div class="font-mono text-3xl text-gray-200 mb-8 group-hover:text-black transition duration-500">{3}</div>
                         <div>
-                            <h4 class="font-medium mb-6 text-2xl">Asset Routing</h4>
-                            <p class="text-base text-gray-500 leading-relaxed">Zero server bloat via Drive API integration. Media flows directly to cloud storage without load.</p>
+                            <h4 class="font-medium mb-6 text-2xl tracking-tight">Asset Routing</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed font-mono">Zero server bloat via Drive API integration. Media flows directly to cloud storage without load.</p>
                         </div>
                     </div>
                     <!-- Card 4 -->
-                    <div class="bg-white p-16 h-[30rem] flex flex-col justify-between hover:bg-gray-50 transition duration-300 group">
-                        <div class="w-16 h-16 bg-norml-gray rounded-sm mb-8 group-hover:bg-black transition duration-300"></div>
+                    <div class="bg-white p-12 h-[32rem] flex flex-col justify-between hover:bg-[#FAFAFA] transition duration-500 group border-r border-b border-norml-border relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-norml-gray rounded-bl-full -mr-12 -mt-12 transition-all duration-500 group-hover:bg-black"></div>
+                        <div class="font-mono text-3xl text-gray-200 mb-8 group-hover:text-black transition duration-500">{4}</div>
                         <div>
-                            <h4 class="font-medium mb-6 text-2xl">Instant Sync</h4>
-                            <p class="text-base text-gray-500 leading-relaxed">Zapier webhooks trigger instant alerts for the sales team, enabling < 5 min response time.</p>
+                            <h4 class="font-medium mb-6 text-2xl tracking-tight">Instant Sync</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed font-mono">Zapier webhooks trigger instant alerts for the sales team, enabling < 5 min response time.</p>
                         </div>
                     </div>
                 </div>
